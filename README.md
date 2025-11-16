@@ -184,7 +184,7 @@ services:
   app:
     build:
       context: .
-    dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.dev
     container_name: axum-seaorm-app
     ports:
       - "${APP_PORT}:3000"
@@ -201,30 +201,24 @@ services:
       - ./Cargo.toml:/app/Cargo.toml:ro
       - cargo_cache:/usr/local/cargo/registry
       - target_cache:/app/target
-
+  
   pgadmin:
-    image: dpage/pgadmin4:8.5
+    image: dpage/pgadmin4:7
     container_name: axum-seaorm-pgadmin
-    env_file:
-      - ./.env
+    restart: unless-stopped
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@example.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin123}
     ports:
-      - "${PGADMIN_PORT}:80"
+      - "${PGADMIN_PORT:-8080}:80"
     depends_on:
-      db:
-        condition: service_healthy
-    volumes:
-      - pgadmin_data:/var/lib/pgadmin
-      - ./pgadmin_storage:/var/lib/pgadmin/storage/${PGADMIN_EMAIL_ESCAPED}
+      - db
 
 volumes:
   postgres_data:
   cargo_cache:
   target_cache:
-  pgadmin_data:
-  pgadmin_storage:
+
 ```
 
 ---
